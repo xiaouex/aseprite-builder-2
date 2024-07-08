@@ -1,7 +1,7 @@
 name: Build and release Aseprite
 
 on:
-  
+   workflow_dispatch: 
 env:
   BUILD_TYPE: Release
 
