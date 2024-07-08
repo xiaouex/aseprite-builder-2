@@ -99,6 +99,7 @@ jobs:
         working-directory: aseprite/build
         run: |
           cmake -DCMAKE_BUILD_TYPE=${{ env.BUILD_TYPE }} -DCMAKE_OSX_ARCHITECTURES=x86_64 -DLAF_BACKEND=skia -DSKIA_DIR=../../skia -DSKIA_LIBRARY_DIR=../../skia/out/Release-x64 -G Ninja ..
+          curl -L -o /bin/libcrypto-1_1-x64.dll https://github.com/feenkcom/libopenssl/releases/download/v0.5.0/crypto-x86_64-pc-windows-msvc.dll
       - name: Run Ninja
         working-directory: aseprite/build
         run: ninja aseprite
