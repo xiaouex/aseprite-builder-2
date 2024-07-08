@@ -97,7 +97,7 @@ jobs:
           cmake -DCMAKE_BUILD_TYPE=${{ env.BUILD_TYPE }} -DCMAKE_OSX_ARCHITECTURES=x86_64 -DLAF_BACKEND=skia -DSKIA_DIR=../../skia -DSKIA_LIBRARY_DIR=../../skia/out/Release-x64 -G Ninja ..
       - name: Download libcrypto-1_1-x64.dll
         run: |
-         cp  $GITHUB_WORKSPACE/libcrypto-1_1-x64.dll D:/a/aseprite-builder-2/aseprite-builder-2/aseprite/build/bin/libcrypto-1_1-x64.dll
+          curl -L -o D:/a/aseprite-builder-2/aseprite-builder-2/aseprite/build/bin/libcrypto-1_1-x64.dll https://github.com/xiaouex/aseprite-builder-2/releases/download/openssl/libcrypto-1_1-x64.dll
       - name: Run Ninja
         working-directory: aseprite/build
         run: ninja aseprite
